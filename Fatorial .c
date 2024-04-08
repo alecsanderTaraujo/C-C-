@@ -1,16 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main ()
+long int fatorial(int n) 
 
 {
- float fat = 1;
- int n;
-
-for (n = 1  ; n >= 20; n--) {
- fat *= n;
+    if (n == 0 || n == 1)
+        return 1;
+    else
+        return n * fatorial(n - 1);
 }
-printf ("o fatorial é %f", fat);
 
-return 0;
+int main() {
+    int numero = 20;
+    long int resultado = fatorial(numero);
+    
+    printf("O fatorial de %d Ã©: %lld\n", numero, resultado);
+    
+    return 0;
 }
